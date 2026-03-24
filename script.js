@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --- 1. Typewriter Effect --- */
-    const texts = ["Aspiring Cloud & Full Stack Developer", "Aspiring DevOps Engineer", "Aspiring Cloud Architect", ""];
+    const texts = ["Aspiring Cloud Computing Engineer", "Aspiring DevOps Engineer", "Aspiring Cloud Architect", ""];
     let count = 0;
     let index = 0;
     let currentText = "";
