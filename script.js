@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* --- 1. Typewriter Effect --- */
-    const texts = ["Aspiring Cloud Engineer", "Aspiring DevOps Engineer", "Aspiring Cloud Architect", ""];
+    const texts = ["Aspiring Cloud & Full Stack Developer", "Aspiring DevOps Engineer", "Aspiring Cloud Architect", ""];
     let count = 0;
     let index = 0;
     let currentText = "";
@@ -235,5 +235,73 @@ document.addEventListener('DOMContentLoaded', () => {
             panel.style.setProperty('--mouse-y', `${y}px`);
         });
     });
+
+    /* --- 9. Cloud/Particle Background --- */
+    const canvas = document.getElementById('bg-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 100; // Optimal for performance
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedY = Math.random() * -0.5 - 0.2; // Move upwards
+                this.speedX = (Math.random() - 0.5) * 0.4; // Slight horizontal drift
+                this.alpha = Math.random() * 0.5 + 0.1;
+                this.color = `rgba(0, 198, 255, ${this.alpha})`; // Cyan neon color
+            }
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                
+                // Reset to bottom when floating off screen
+                if (this.y + this.size < 0) {
+                    this.y = canvas.height + this.size;
+                    this.x = Math.random() * canvas.width;
+                }
+                
+                // Bounce off sides
+                if (this.x < 0 || this.x > canvas.width) {
+                    this.speedX = -this.speedX;
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+    }
 
 });
