@@ -56,43 +56,10 @@
         
         <!-- Hero Section -->
         <section id="home" class="hero section">
-            <div class="main-container hero-grid">
-                <!-- Left side -->
-                <div class="hero-content reveal reveal-left">
-                    <p class="greeting text-gradient">Hello there! <span class="wave">👋</span></p>
-                    <h1 class="hero-title">
-                        I'm <span class="text-white">Divyansh Sinha</span>
-                    </h1>
-                    <div class="typewriter-container">
-                        <span class="typewriter-text" id="typewriter"></span><span class="cursor">|</span>
-                    </div>
-                    <p class="hero-subtitle text-muted reveal reveal-left" style="transition-delay: 200ms;">
-                        An Aspiring Cloud Engineer dedicated to designing robust, scalable, and secure cloud infrastructures. Specialized in AWS, automation, and modern deployment practices.
-                    </p>
-                    <div class="hero-actions mt-8">
-                        <a href="#projects" class="btn btn-primary">
-                            View Projects
-                        </a>
-                        <a href="https://drive.google.com/file/d/14ohQtVj7x82I9LlseheSMobAiMXqTYS0/view?usp=sharing" target="_blank" class="btn btn-outline">
-                            View Resume
-                        </a>
-                    </div>
-                    <div class="social-links mt-8">
-                        <a href="https://github.com/Divyansh727" target="_blank" class="social-icon group" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/divyansh-sinha-4a0b94377?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-icon group" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="mailto:divyanshsinha050517@gmail.com" class="social-icon group" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right side -->
-                <div class="hero-visual reveal reveal-right">
-                    <div class="profile-container glass-panel">
+            <div class="main-container hero-grid centered-hero">
+                <!-- Visual Box (Profile Picture) moved to center/top -->
+                <div class="hero-visual reveal reveal-up mt-8">
+                    <div class="profile-container glass-panel" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-scale="1.05" data-tilt-glare="true" data-tilt-max-glare="0.5">
                         <div class="profile-glow"></div>
                         <!-- Profile Image -->
                         <div class="profile-image relative group overflow-hidden">
@@ -114,6 +81,39 @@
                             <i class="fas fa-server" style="color: #4DB33D;"></i>
                             <span>Infrastructure</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="hero-content reveal reveal-up text-center flex flex-col items-center">
+                    <p class="greeting text-gradient justify-center">Hello there! <span class="wave">👋</span></p>
+                    <h1 class="hero-title text-center">
+                        I'm <span class="text-white">Divyansh Sinha</span>
+                    </h1>
+                    <div class="typewriter-container text-center justify-center flex">
+                        <span class="typewriter-text" id="typewriter"></span><span class="cursor">|</span>
+                    </div>
+                    <p class="hero-subtitle text-muted text-center max-w-2xl mx-auto" style="transition-delay: 200ms;">
+                        An Aspiring Cloud Engineer dedicated to designing robust, scalable, and secure cloud infrastructures. Specialized in AWS, automation, and modern deployment practices.
+                    </p>
+                    <div class="hero-actions mt-8 justify-center flex">
+                        <a href="#projects" class="btn btn-primary">
+                            View Projects
+                        </a>
+                        <a href="https://drive.google.com/file/d/14ohQtVj7x82I9LlseheSMobAiMXqTYS0/view?usp=sharing" target="_blank" class="btn btn-outline">
+                            View Resume
+                        </a>
+                    </div>
+                    <div class="social-links mt-8 justify-center">
+                        <a href="https://github.com/Divyansh727" target="_blank" class="social-icon group" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/divyansh-sinha-4a0b94377?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="social-icon group" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:divyanshsinha050517@gmail.com" class="social-icon group" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -752,6 +752,9 @@
         </div>
     </footer>
 
+    <!-- Vanilla Tilt JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHsu0040D9wwCw80PXXGxoAgsE4v4fB02fXm1H/zXkZqeeBbyw/v4b2eS2LqN48W3J2A+Ew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
